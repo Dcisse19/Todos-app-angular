@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+// Variables
+// ------- COLORS ------
+$dark: #040722;
+$dark-blue: #1D2038;
+$purple: #E475F1;
+$yellow-dark: #F3D24F;
+$blue: #64A7D9;
+$green: #88E7A1;
+$white: #ffffff;
+
+// ------ FONTS ------
+$font-main: 'Quicksand', sans-serif;
+
+// ------ DISPLAY --------
+
+@mixin display-flex($direction:row){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.flex {
+  @include display-flex();
+}
+.column{
+  @include display-flex(column);
+}
+
+// ----- GENERAL -----
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: min(24.5rem, 100%);
+  background-color: $dark;
+  font-family: $font-main;
+  color: $white;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+main{
+  width: min(21.5rem, 95%);
+  margin: 2.3rem auto;
+  @include display-flex(column);
+}
+
+img{
+  display: block;
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button{
+  background-color: $dark-blue;
+  border: none;
+}
+
+
