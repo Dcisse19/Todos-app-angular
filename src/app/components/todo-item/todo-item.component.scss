@@ -1,0 +1,11 @@
+.todo-item{
+  gap: .8rem;
+  justify-content: flex-start;
+  button{
+    border: 1px solid var(--white);
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--dark);
+  }
+}
