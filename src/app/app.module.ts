@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { CategoryButtonComponent } from './components/category-button/category-button.component';
+import { ActionButtonComponent } from './components/action-button/action-button.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CategoryButtonComponent } from './components/category-button/category-b
     FooterComponent,
     TodoItemComponent,
     TodoListComponent,
-    CategoryButtonComponent
+    CategoryButtonComponent,
+    ActionButtonComponent
   ],
   imports: [
     BrowserModule,
