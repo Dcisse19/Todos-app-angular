@@ -1,20 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 // Variables
 // ------- COLORS ------
-$dark: #040722;
-$dark-blue: #1D2038;
-$purple: #E475F1;
-$yellow-dark: #F3D24F;
-$blue: #64A7D9;
-$green: #88E7A1;
-$white: #ffffff;
+:root {
+  --dark: #040722;
+  --dark-blue: #1d2038;
+  --purple: #e475f1;
+  --yellow-dark: #f3d24f;
+  --blue: #64a7d9;
+  --green: #88e7a1;
+  --white: #ffffff;
+  --font-main: "Quicksand", sans-serif;
+}
 
 // ------ FONTS ------
-$font-main: 'Quicksand', sans-serif;
 
 // ------ DISPLAY --------
 
-@mixin display-flex($direction:row){
+@mixin display-flex($direction: row) {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,12 +26,12 @@ $font-main: 'Quicksand', sans-serif;
 .flex {
   @include display-flex();
 }
-.column{
+.column {
   @include display-flex(column);
 }
 
 // ----- GENERAL -----
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -37,32 +39,30 @@ $font-main: 'Quicksand', sans-serif;
 
 body {
   width: min(24.5rem, 100%);
-  background-color: $dark;
-  font-family: $font-main;
-  color: $white;
+  background-color: var(--dark);
+  font-family: var(--font-main);
+  color: var(--white);
   margin: 0 auto;
   font-size: 1rem;
 }
 
-main{
+main {
   width: min(21.5rem, 95%);
   margin: 2.3rem auto;
   @include display-flex(column);
 }
 
-img{
+img {
   display: block;
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--white);
 }
 
-button{
-  background-color: $dark-blue;
+button {
+  background-color: var(--dark-blue);
   border: none;
 }
-
-
