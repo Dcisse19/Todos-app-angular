@@ -18,7 +18,7 @@
 
 @mixin display-flex($direction: row) {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: $direction;
 }
@@ -52,6 +52,7 @@ main {
   min-height: 20rem;
   @include display-flex(column);
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 img {
