@@ -51,6 +51,7 @@ main {
   margin: 2.3rem auto;
   min-height: 20rem;
   @include display-flex(column);
+  align-items: flex-start;
 }
 
 img {
