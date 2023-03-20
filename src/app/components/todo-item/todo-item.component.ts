@@ -21,6 +21,7 @@ export class TodoItemComponent implements OnInit {
       .getTodoItemCategory(this.item)
       .subscribe((category) =>
         {this.category = category!
-        console.log(this.category)});
+        // console.log(this.category)
+      });
   }
 }

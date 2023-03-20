@@ -1,6 +1,6 @@
 <hr />
 <footer class="flex">
-  <button><i class="fas fa-light fa-list-ul"></i></button>
-  <button><i class="fas fa-light fa-plus"></i></button>
-  <button><i class="fas fa-light fa-clock-rotate-left"></i></button>
+  <a routerLink=""><button (click)="styleNavOnLocation()" [class.yellow]="url === 'home'"><i class="fas fa-light fa-list-ul"></i></button></a>
+  <a routerLink="/ajout-tache"><button (click)="styleNavOnLocation()" [class.green]="url === 'ajout'"><i class="fas fa-light fa-plus"></i></button></a>
+  <a routerLink="/historique"><button (click)="styleNavOnLocation()"[class.purple]="url === 'historique'"><i class="fas fa-light fa-clock-rotate-left"></i></button></a>
 </footer>
