@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { ITodo } from 'src/app/mocks/todos.mock';
 import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 
@@ -8,15 +9,25 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit{
-  todos! : ITodo[];
+@Input() todos! : ITodo[];
 
-  constructor(private todoItemService: TodoItemService){}
+urgentExist : boolean = false;
+otherExist : boolean = false;
 
-  ngOnInit(): void {
-    this.getTodos();
+ngOnInit(){
+  this.isUrgentExist();
+}
+isUrgentExist(){
+  const foundUrgent = this.todos.find((todo) => todo.isUrgent);
+  if(foundUrgent){
+    console.log('urgent : ',foundUrgent)
+    this.urgentExist = true;
+  }
+  const foundNonUrgent = this.todos.find((todo) => !todo.isUrgent);
+  if(foundNonUrgent){
+    console.log('non urgent : ',foundNonUrgent);
+    this.otherExist = true;
   }
 
-  getTodos(){
-    this.todoItemService.getTodos().subscribe((todos) => this.todos = todos);
-  }
+}
 }

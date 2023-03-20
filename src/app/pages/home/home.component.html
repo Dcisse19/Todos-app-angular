@@ -1,1 +1,8 @@
-<todos-todo-list></todos-todo-list>
+<div *ngIf="!todos.length" class="noTodos column">
+  <p>
+    Aucune tâche pour le moment
+    <angular-emojis [name]="'raised_hands'" size="20"></angular-emojis>
+  </p>
+  <button (click)="createTask()">Créer une tâche</button>
+</div>
+<todos-todo-list *ngIf="todos.length" [todos]="todos"></todos-todo-list>
