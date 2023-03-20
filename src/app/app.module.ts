@@ -9,6 +9,10 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { CategoryButtonComponent } from './components/category-button/category-button.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AddTaskComponent } from './pages/add-task/add-task.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ActionButtonComponent } from './components/action-button/action-button.
     TodoItemComponent,
     TodoListComponent,
     CategoryButtonComponent,
-    ActionButtonComponent
+    ActionButtonComponent,
+    HomeComponent,
+    AddTaskComponent,
+    HistoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
