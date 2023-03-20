@@ -1,1 +1,18 @@
-<todos-todo-item *ngFor="let todo of todos" [item]="todo"></todos-todo-item>
+<section class="todos-list flex column">
+<div *ngIf="urgentExist" class="column todo-items">
+  <h2>
+    <angular-emojis [name]="'warning'" size="20"></angular-emojis>Tâches
+    urgentes
+  </h2>
+  <ng-container *ngFor="let todo of todos">
+    <todos-todo-item *ngIf="todo.isUrgent" [item]="todo"></todos-todo-item>
+  </ng-container>
+</div>
+<div *ngIf="otherExist" class="column todo-items">
+  <h2><angular-emojis [name]="'cherry_blossom'" size="20"></angular-emojis>Autres
+    tâches</h2>
+  <ng-container *ngFor="let todo of todos">
+    <todos-todo-item *ngIf="!todo.isUrgent" [item]="todo"></todos-todo-item>
+  </ng-container>
+</div>
+</section>

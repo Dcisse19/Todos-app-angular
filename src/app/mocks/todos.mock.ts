@@ -64,4 +64,11 @@ export const TODOS: ITodo[] = [
     isUrgent:false,
     doneDate: null,
   },
+  {
+    id:3,
+    content:"Faire la vaiselle",
+    categoryId:5,
+    isUrgent:false,
+    doneDate: null,
+  },
 ]
