@@ -12,7 +12,6 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 export class AddTaskFormComponent {
   categories: ICategory[] = CATEGORIES;
   private urgency!: boolean;
-
   taskForm!: FormGroup;
   taskCategory!: ICategory;
   todoItem!: ITodo;

@@ -16,7 +16,9 @@ export class TodoItemService {
 
   private todosUrl = 'http://localhost:3000/todos'; // Url pour accéder à l'API
   private categoriesUrl = 'http://localhost:3000/categories'; // Url pour accéder à l'API
+
   getTodos(): Observable<ITodo[]> {
+    this.http.get<ITodo[]>(this.todosUrl).subscribe((todo) => console.log(todo));
     return this.http.get<ITodo[]>(this.todosUrl)
     .pipe(
       catchError(this.handleError<ITodo[]>('getTodos', []))
@@ -42,7 +44,6 @@ export class TodoItemService {
   // }
 
   addTodoItem(todoItem: ITodo) : Observable<ITodo>{
-    // console.log(todoItem);
     return this.http.post<ITodo>(this.todosUrl, todoItem, this.httpOptions)
     .pipe(catchError(this.handleError<ITodo>('addTodoItem')));
   }
