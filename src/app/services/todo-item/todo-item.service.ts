@@ -8,14 +8,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TodoItemService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
   };
   constructor(
     private http: HttpClient
   ) {}
 
-  private todosUrl = 'api/todos'; // Url pour accéder à l'API
-  private categoriesUrl = 'api/categories'; // Url pour accéder à l'API
+  private todosUrl = 'http://localhost:3000/todos'; // Url pour accéder à l'API
+  private categoriesUrl = 'http://localhost:3000/categories'; // Url pour accéder à l'API
+
   getTodos(): Observable<ITodo[]> {
     this.http.get<ITodo[]>(this.todosUrl).subscribe((todo) => console.log(todo));
     return this.http.get<ITodo[]>(this.todosUrl)
@@ -43,7 +44,6 @@ export class TodoItemService {
   // }
 
   addTodoItem(todoItem: ITodo) : Observable<ITodo>{
-    console.log(todoItem);
     return this.http.post<ITodo>(this.todosUrl, todoItem, this.httpOptions)
     .pipe(catchError(this.handleError<ITodo>('addTodoItem')));
   }

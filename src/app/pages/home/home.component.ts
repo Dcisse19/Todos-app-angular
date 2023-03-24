@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITodo } from 'src/app/mocks/todos.mock';
 import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit{
   todos : ITodo[] = [];
 
   constructor(private todoItemService: TodoItemService,
-    private router: Router){}
+    private router: Router,
+    private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
     this.getTodos();
@@ -21,8 +22,9 @@ export class HomeComponent implements OnInit{
 
   getTodos(){
     this.todoItemService.getTodos().subscribe((todos) => {
-    this.todos = todos;
-    // console.log(todos);
+      this.cdr.detectChanges();
+      this.todos = todos;
+      // console.log(todos);
   });
   }
 

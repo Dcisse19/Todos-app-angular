@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ControlValueAccessor } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CATEGORIES, ICategory, ITodo } from 'src/app/mocks/todos.mock';
 import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 
@@ -10,15 +11,15 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 })
 export class AddTaskFormComponent {
   categories: ICategory[] = CATEGORIES;
-  isUrgent: boolean = false;
-
+  private urgency!: boolean;
   taskForm!: FormGroup;
   taskCategory!: ICategory;
   todoItem!: ITodo;
 
   constructor(
     private formBuilder: FormBuilder,
-    private todoService: TodoItemService
+    private todoService: TodoItemService,
+    private router : Router
   ) {}
   ngOnInit() {
     this.initTaskForm();
@@ -31,13 +32,14 @@ export class AddTaskFormComponent {
     });
   }
   addTaskForm() {
+    this.taskForm.value.isUrgent === null ? this.urgency = false : this.urgency = true;
     this.todoItem = {
       content: this.taskForm.value.content.trim(),
-      categoryId: this.taskForm.value.category,
-      isUrgent: this.taskForm.value.isUrgent,
+      categoryId: +this.taskForm.value.category,
+      isUrgent: this.urgency,
       doneDate: null,
     };
-    this.todoService.addTodoItem(this.todoItem);
-    this.todoService.getTodos();
+    this.todoService.addTodoItem(this.todoItem).subscribe((todo) => console.log('item to add : ',todo));
+    this.router.navigate(['/']);
   }
 }

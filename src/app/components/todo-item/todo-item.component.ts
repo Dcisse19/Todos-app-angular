@@ -10,7 +10,6 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 export class TodoItemComponent implements OnInit {
   @Input() item!: ITodo;
   category!: ICategory;
-  icon = "shopping_trolley";
 
   constructor(private todoItemService: TodoItemService) {}
   ngOnInit(): void {
