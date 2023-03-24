@@ -13,7 +13,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddTaskComponent } from './pages/add-task/add-task.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-
+import { AddTaskFormComponent } from './components/add-task-form/add-task-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     HomeComponent,
     AddTaskComponent,
     HistoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AddTaskFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularEmojisModule
+    AngularEmojisModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
