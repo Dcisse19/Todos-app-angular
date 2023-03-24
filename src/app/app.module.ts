@@ -16,8 +16,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AddTaskFormComponent } from './components/add-task-form/add-task-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/memory-data/in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +36,7 @@ import { InMemoryDataService } from './services/memory-data/in-memory-data.servi
     AppRoutingModule,
     AngularEmojisModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation:false})
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,78 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "shopping",
+      "icon": "shopping_trolley"
+    },
+    {
+      "id": 2,
+      "name": "health",
+      "icon": "pill"
+    },
+    {
+      "id": 3,
+      "name": "work",
+      "icon": "briefcase"
+    },
+    {
+      "id": 4,
+      "name": "bills",
+      "icon": "money_with_wings"
+    },
+    {
+      "id": 5,
+      "name": "cleaning",
+      "icon": "soap"
+    },
+    {
+      "id": 6,
+      "name": "other",
+      "icon": "shamrock"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "content": "Aller faire les courses",
+      "categoryId": 1,
+      "isUrgent": true,
+      "doneDate": null
+    },
+    {
+      "id": 3,
+      "content": "Faire la vaiselle",
+      "categoryId": 5,
+      "isUrgent": false,
+      "doneDate": null
+    },
+    {
+      "content": "Aller à la banque",
+      "categoryId": 4,
+      "isUrgent": true,
+      "doneDate": null,
+      "id": 4
+    },
+    {
+      "id": 6,
+      "content": "Envoyer les papiers administratifs",
+      "categoryId": 3,
+      "isUrgent": false,
+      "doneDate": null
+    },
+    {
+      "content": "Envoyer rapport",
+      "categoryId": 6,
+      "isUrgent": false,
+      "doneDate": null,
+      "id": 7
+    },
+    {
+      "content": "Aller chercher les médicaments",
+      "categoryId": 2,
+      "isUrgent": true,
+      "doneDate": null,
+      "id": 8
+    }
+  ]
+}

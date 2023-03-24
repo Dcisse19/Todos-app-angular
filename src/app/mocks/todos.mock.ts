@@ -7,7 +7,7 @@ export interface ICategory {
 }
 
 export interface ITodo {
-  id?:number;
+  id:number | undefined,
   content:string;
   categoryId:number;
   isUrgent:boolean;
