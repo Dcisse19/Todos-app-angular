@@ -1,0 +1,45 @@
+<form [formGroup]="taskForm" class="column">
+  <p>Sélectionnez votre catégorie :</p>
+  <div class="categories-btn flex">
+    <div *ngFor="let category of categories">
+      <div class="category-btn">
+        <input type="radio" name="category" formControlName="category" value="{{category.id}}">
+          ><angular-emojis
+            class="category-icon flex"
+            [name]="category.icon"
+            size="20"
+          ></angular-emojis>
+      </div>
+    </div>
+  </div>
+  <p>Quelle tâche avez-vous à effectuer ?</p>
+  <textarea
+    formControlName="content"
+    placeholder="Exemple: Faire les courses "
+  ></textarea>
+  <div class="markUrgent flex">
+    <input type="checkbox" formControlName="isUrgent" value="!isUrgent">
+    <p>
+      La tâche est urgente
+      <angular-emojis [name]="'warning'" size="20"></angular-emojis>
+    </p>
+  </div>
+  <button (click)="addTaskForm()" class="validate-btn">
+    Valider ma tâche
+  </button>
+</form>
+<!-- <form [formGroup]="taskForm" class="column">
+  <p>Sélectionnez votre catégorie :</p>
+  <div class="categories-btn flex">
+    <button type="input" formControlName="category" *ngFor="let category of categories">
+      <angular-emojis class="flex" [name]="category.icon" size="20"></angular-emojis>
+    </button>
+  </div>
+  <p>Quelle tâche avez-vous à effectuer ?</p>
+  <textarea formControlName="content" placeholder="Exemple: Faire les courses "></textarea>
+  <div class="markUrgent flex">
+    <button type="input" formControlName="isUrgent" value="!isUrgent"></button>
+    <p>La tâche est urgente <angular-emojis [name]="'warning'" size="20"></angular-emojis></p>
+  </div>
+  <button (click)=submitTaskForm() class="validate-btn">Valider ma tâche</button>
+</form> -->

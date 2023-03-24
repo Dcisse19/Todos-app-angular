@@ -7,7 +7,5 @@ import { CATEGORIES, ICategory } from 'src/app/mocks/todos.mock';
   styleUrls: ['./category-button.component.scss']
 })
 export class CategoryButtonComponent {
-  // @Input() category!: ICategory[];
-  category:ICategory = CATEGORIES[0];
-
+  @Input() category!: ICategory;
 }

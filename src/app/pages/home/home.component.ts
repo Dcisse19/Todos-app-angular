@@ -10,7 +10,7 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  todos! : ITodo[];
+  todos : ITodo[] = [];
 
   constructor(private todoItemService: TodoItemService,
     private router: Router){}
@@ -20,7 +20,10 @@ export class HomeComponent implements OnInit{
   }
 
   getTodos(){
-    this.todoItemService.getTodos().subscribe((todos) => this.todos = todos);
+    this.todoItemService.getTodos().subscribe((todos) => {
+    this.todos = todos;
+    // console.log(todos);
+  });
   }
 
   createTask(){

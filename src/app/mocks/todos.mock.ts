@@ -7,7 +7,7 @@ export interface ICategory {
 }
 
 export interface ITodo {
-  id:number;
+  id?:number;
   content:string;
   categoryId:number;
   isUrgent:boolean;
@@ -39,7 +39,7 @@ export const CATEGORIES: ICategory[] = [
   {
     id:5,
     name: "cleaning",
-    icon: "money_with_wings"
+    icon: "soap"
   },
   {
     id:6,
