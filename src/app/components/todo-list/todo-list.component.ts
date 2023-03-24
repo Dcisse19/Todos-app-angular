@@ -20,12 +20,12 @@ ngOnInit(){
 isUrgentExist(){
   const foundUrgent = this.todos.find((todo) => todo.isUrgent);
   if(foundUrgent){
-    console.log('urgent : ',foundUrgent)
+    // console.log('urgent : ',foundUrgent)
     this.urgentExist = true;
   }
   const foundNonUrgent = this.todos.find((todo) => !todo.isUrgent);
   if(foundNonUrgent){
-    console.log('non urgent : ',foundNonUrgent);
+    // console.log('non urgent : ',foundNonUrgent);
     this.otherExist = true;
   }
 

@@ -11,20 +11,6 @@ export class FooterComponent implements OnInit {
   url!:string;
 
   ngOnInit(): void {
-    this.styleNavOnLocation();
   }
 
-  styleNavOnLocation(){
-    this.location.onUrlChange(() =>{
-      if(this.location.path().includes('historique')){
-        this.url = "historique";
-      }
-      else if(this.location.path().includes('tache')){
-        this.url = "ajout";
-      }
-      else{
-        this.url ="home";
-      }
-    })
-  }
 }

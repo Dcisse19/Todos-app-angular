@@ -4,24 +4,25 @@ hr{
 footer {
   justify-content: center;
   gap: 1.2rem ;
-  button{
+  a{
     width: 4rem;
     height: 4rem;
     border-radius: 100%;
+    background-color: var(--dark-blue);
+    &.yellow{
+      background-color: var(--yellow-dark);
+    }
+    &.green{
+      background-color: var(--green);
+    }
+
+    &.purple{
+      background-color: var(--purple);
+    }
     i{
       font-size: 1.6rem;
     }
   }
 }
 
-.yellow{
-  background-color: var(--yellow-dark);
-}
 
-.green{
-  background-color: var(--green);
-}
-
-.purple{
-  background-color: var(--purple);
-}
