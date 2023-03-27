@@ -17,6 +17,7 @@ otherExist : boolean = false;
 ngOnInit(){
   this.isUrgentExist();
 }
+
 isUrgentExist(){
   const foundUrgent = this.todos.find((todo) => todo.isUrgent);
   if(foundUrgent){

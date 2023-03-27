@@ -1,4 +1,4 @@
 <div class="todo-item flex">
-  <button></button>
+  <button (click)="archiveItem()" [class.checked]="item.doneDate !== null"></button>
   <a routerLink="/modification-tache/{{item.id}}"><angular-emojis [name]="category.icon" size="20"></angular-emojis>{{item.content}}</a>
 </div>
