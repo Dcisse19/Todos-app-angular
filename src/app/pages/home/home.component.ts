@@ -20,11 +20,15 @@ export class HomeComponent implements OnInit{
     this.getTodos();
   }
 
+getNonDoneItems(todoList: ITodo[]){
+  const foundTodos = todoList.filter((todo) => todo.doneDate === null);
+  return foundTodos;
+}
+
   getTodos(){
     this.todoItemService.getTodos().subscribe((todos) => {
+      this.todos = this.getNonDoneItems(todos);
       this.cdr.detectChanges();
-      this.todos = todos;
-      // console.log(todos);
   });
   }
 

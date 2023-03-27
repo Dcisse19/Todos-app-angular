@@ -24,6 +24,12 @@ export class TodoItemService {
       catchError(this.handleError<ITodo[]>('getTodos', []))
     );
   }
+  getTodosByDoneDate(): Observable<ITodo[]> {
+    return this.http.get<ITodo[]>(this.todosUrl+"?_sort=doneDate&_order=desc")
+    .pipe(
+      catchError(this.handleError<ITodo[]>('getTodos', []))
+    );
+  }
 
   getCategories(): Observable<ICategory[]>{
     return this.http.get<ICategory[]>(this.categoriesUrl)
