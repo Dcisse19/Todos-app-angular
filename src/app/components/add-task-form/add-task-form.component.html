@@ -4,13 +4,12 @@
     <div *ngFor="let category of categories">
       <div class="category-btn">
         <input
-          required
           type="radio"
           name="category"
           formControlName="category"
-          value="{{ category.id }}"
+          value="{{category.id}}"
         />
-        ><angular-emojis
+        <angular-emojis
           class="category-icon flex"
           [name]="category.icon"
           size="20"
@@ -19,19 +18,17 @@
     </div>
   </div>
   <p>Quelle tâche avez-vous à effectuer ?</p>
-  <textarea
-    required
+  <input class="content-input" type="text"
     formControlName="content"
-    placeholder="Exemple: Faire les courses "
-  ></textarea>
+    placeholder="Exemple: Faire les courses"
+  />
   <div class="markUrgent flex">
     <input type="checkbox" formControlName="isUrgent" value="!isUrgent" />
-    <p>
-      La tâche est urgente
+    <p>La tâche est urgente
       <angular-emojis [name]="'warning'" size="20"></angular-emojis>
     </p>
   </div>
-  <button type="button" (click)="addTaskForm()" class="validate-btn">
+  <button type="button" (click)="validateForm()" class="validate-btn">
     Valider ma tâche
   </button>
 </form>

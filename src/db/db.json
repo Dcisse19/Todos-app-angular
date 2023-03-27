@@ -54,11 +54,11 @@
       "id": 4
     },
     {
-      "content": "Envoyer les papiers",
-      "categoryId": 6,
+      "id": 6,
+      "content": "Envoyer les papiers administratifs",
+      "categoryId": 3,
       "isUrgent": false,
-      "doneDate": null,
-      "id": 6
+      "doneDate": null
     },
     {
       "content": "Envoyer rapport",
@@ -66,6 +66,13 @@
       "isUrgent": false,
       "doneDate": null,
       "id": 7
+    },
+    {
+      "content": "Aller chercher les médicaments",
+      "categoryId": 2,
+      "isUrgent": true,
+      "doneDate": null,
+      "id": 8
     }
   ]
 }
