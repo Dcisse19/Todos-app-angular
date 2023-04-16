@@ -11,6 +11,6 @@ export class AppComponent {
   constructor(private todoService: TodoItemService){}
 
   ngOnInit(){
-    this.todoService.getTodos();
+    this.todoService.getTodos().subscribe(()=>{});
   }
 }

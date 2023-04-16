@@ -8,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   constructor(private location: Location) {}
-  url!:string;
+  modifyTaskUrl!: boolean;
 
   ngOnInit(): void {
+    this.styleNavOnLocation();
   }
 
+  styleNavOnLocation() {
+    this.location.onUrlChange(() => {
+      if (this.location.path().includes('modification')) {
+        this.modifyTaskUrl = true;
+      } else {
+        this.modifyTaskUrl = false;
+      }
+    });
+  }
 }
