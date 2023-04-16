@@ -3,11 +3,12 @@
   <div class="categories-btn flex">
     <div *ngFor="let category of categories">
       <div class="category-btn">
-        <input
+        <input class=""
           type="radio"
           name="category"
           formControlName="category"
           value="{{category.id}}"
+          [class.selected]="this.todoItem && this.todoItem.categoryId === category.id"
         />
         <angular-emojis
           class="category-icon flex"

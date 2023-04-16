@@ -1,6 +1,6 @@
 <hr />
 <footer class="flex">
   <a class="flex" routerLinkActive="yellow" routerLink="/" [routerLinkActiveOptions]="{exact:true}"><i class="fas fa-light fa-list-ul"></i></a>
-  <a class="flex" routerLinkActive="green" routerLink="/ajout-tache"><i class="fas fa-light fa-plus"></i></a>
+  <a class="flex" routerLinkActive="green" routerLink="/ajout-tache" [class.green]="modifyTaskUrl"><i class="fas fa-light fa-plus"></i></a>
   <a class="flex" routerLinkActive="purple" routerLink="/historique"><i class="fas fa-light fa-clock-rotate-left"></i></a>
 </footer>

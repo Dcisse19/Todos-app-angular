@@ -1,4 +1,9 @@
-<h2>Historique des tâches</h2>
-<ng-container *ngFor="let todo of todos">
-  <todos-todo-item *ngIf="todo.doneDate !== null" [item]="todo"></todos-todo-item>
-<ng-container>
+<div class="history column">
+  <h2>Historique des tâches</h2>
+  <ng-container *ngFor="let todo of todos">
+    <todos-todo-item
+      *ngIf="todo.doneDate !== null"
+      [item]="todo"
+    ></todos-todo-item>
+  </ng-container>
+</div>

@@ -12,6 +12,11 @@
   --font-main: "Quicksand", sans-serif;
 }
 
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
 // ------ FONTS ------
 
 // ------ DISPLAY --------
@@ -38,6 +43,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   width: min(24.5rem, 100%);
   background-color: var(--dark);
   font-family: var(--font-main);
@@ -45,15 +52,33 @@ body {
   margin: 0 auto;
   font-size: 1rem;
   font-weight: 700;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 main {
   width: min(21.5rem, 95%);
   margin: 2.3rem auto;
-  min-height: 20rem;
+  height: 25rem;
   @include display-flex(column);
   align-items: flex-start;
   justify-content: flex-start;
+  flex: 1;
+  overflow-y: scroll;
+  scrollbar-color: red;
+  // &::-webkit-scrollbar-thumb {
+  //   background: var(--yellow-dark)
+  // }
+}
+::-webkit-scrollbar {
+  width: .2rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--yellow-dark);
+  border-radius: 10px;
 }
 
 img {

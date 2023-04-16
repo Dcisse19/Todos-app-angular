@@ -7,32 +7,34 @@ import { TodoItemService } from 'src/app/services/todo-item/todo-item.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
-  todos : ITodo[] = [];
+export class HomeComponent implements OnInit {
+  todos: ITodo[] = [];
 
-  constructor(private todoItemService: TodoItemService,
+  constructor(
+    private todoItemService: TodoItemService,
     private router: Router,
-    private cdr: ChangeDetectorRef){}
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.getTodos();
   }
 
-getNonDoneItems(todoList: ITodo[]){
-  const foundTodos = todoList.filter((todo) => todo.doneDate === null);
-  return foundTodos;
-}
+  getNonDoneItems(todoList: ITodo[]) {
+    const foundTodos = todoList.filter((todo) => todo.doneDate === null);
+    return foundTodos;
+  }
 
-  getTodos(){
+  getTodos() {
     this.todoItemService.getTodos().subscribe((todos) => {
       this.todos = this.getNonDoneItems(todos);
       this.cdr.detectChanges();
-  });
+    });
   }
 
-  createTask(){
-    this.router.navigate(['/ajout-tache'])
+  createTask() {
+    this.router.navigate(['/ajout-tache']);
   }
 }

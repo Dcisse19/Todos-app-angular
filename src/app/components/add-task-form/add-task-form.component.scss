@@ -10,14 +10,22 @@ form {
       position: relative;
       input {
         appearance: none;
+        display: flex;
+        justify-content: center;
         border: 1px solid red;
         background-color: var(--dark-blue);
         width: 100%;
         height: 100%;
-        margin:0;
+        margin: 0;
         border-radius: 100%;
         position: absolute;
         padding: 0;
+        &:checked{
+          background-color: var(--yellow-dark);
+        }
+        &.selected{
+          background-color: var(--yellow-dark);
+        }
       }
       .category-icon {
         position: absolute;
@@ -34,6 +42,9 @@ form {
     padding: 0.5rem;
     color: var(--white);
     font-size: 1rem;
+    border: none;
+    font-family: var(--font-main);
+    position: relative;
     &::placeholder {
       font: 700 1rem var(--font-main);
     }
@@ -41,10 +52,23 @@ form {
   .markUrgent {
     gap: 0.6rem;
     input {
+      appearance: none;
       border-radius: 100%;
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
       background-color: var(--dark-blue);
+      position: relative;
+      &:checked{
+        background-color: var(--purple);
+        &::before {
+          content: "\2713";
+          position: absolute;
+          bottom: .2rem;
+          right: .4rem;
+          color: var(--white);
+          font-weight: 700;
+        }
+      }
     }
   }
   .validate-btn {

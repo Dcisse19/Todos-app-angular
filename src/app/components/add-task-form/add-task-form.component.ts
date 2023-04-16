@@ -20,6 +20,7 @@ export class AddTaskFormComponent {
   taskForm!: FormGroup;
   taskCategory!: ICategory;
   todoItem!: ITodo;
+  selected!: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
