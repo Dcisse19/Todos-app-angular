@@ -21,13 +21,13 @@ export class AddTaskFormComponent {
   taskCategory!: ICategory;
   todoItem!: ITodo;
   selected!: boolean;
+  errorMessage! : string
 
   constructor(
     private formBuilder: FormBuilder,
     private todoService: TodoItemService,
     private router: Router,
     private route: ActivatedRoute,
-    private location: Location
   ) {}
   ngOnInit() {
     this.getItemById();
@@ -42,7 +42,7 @@ export class AddTaskFormComponent {
     this.taskForm = this.formBuilder.group({
       category: [categoryValue, [Validators.required]],
       content: [contentValue, [Validators.required]],
-      isUrgent: [isUrgentValue, [Validators.required]],
+      isUrgent: [isUrgentValue],
     });
   }
 
@@ -70,16 +70,21 @@ export class AddTaskFormComponent {
     };
   }
   validateForm() {
-    if(this.todoItem){
-      this.getFormValues();
-      this.todoService.updateTodoItem(this.todoItem).subscribe(() => this.router.navigate(['/']))
-    }
-    else {
-      this.getFormValues();
-      this.todoService
+    if (this.taskForm.status === 'INVALID'){
+      this.errorMessage = "Tous les champs sont requis"
+      this.router.navigate(['ajout-tache']);
+    } else {
+      if(this.todoItem){
+        this.getFormValues();
+        this.todoService.updateTodoItem(this.todoItem).subscribe(() => this.router.navigate(['/']))
+      }
+      else {
+        this.getFormValues();
+        this.todoService
         .addTodoItem(this.todoItem)
         .subscribe((todo) => console.log('item to add : ', todo));
-      this.router.navigate(['/']);
+        this.router.navigate(['/']);
+      }
     }
   }
 }
