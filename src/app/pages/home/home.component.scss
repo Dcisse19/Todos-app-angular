@@ -1,14 +1,16 @@
-:host{
-position: absolute;
-left: 15%;
-  top: 40%;}
-.noTodos{
+:host {
+  position: absolute;
+  max-height: 100vh;
+  top: 35%;
+  left: 15%;
+}
+.noTodos {
   // position: absolute;
   justify-content: center;
   gap: 1.2rem;
   height: 100%;
   left: 50;
-  p{
+  p {
     font-weight: 700;
   }
   button {
@@ -20,4 +22,3 @@ left: 15%;
     align-self: center;
   }
 }
-

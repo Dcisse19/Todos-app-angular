@@ -65,10 +65,8 @@ main {
   justify-content: flex-start;
   flex: 1;
   overflow-y: scroll;
-  scrollbar-color: red;
-  // &::-webkit-scrollbar-thumb {
-  //   background: var(--yellow-dark)
-  // }
+  overflow-x: hidden;
+  max-height: 100vh;
 }
 ::-webkit-scrollbar {
   width: .2rem;

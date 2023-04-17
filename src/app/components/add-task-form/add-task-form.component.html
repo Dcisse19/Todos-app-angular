@@ -29,6 +29,7 @@
       <angular-emojis [name]="'warning'" size="20"></angular-emojis>
     </p>
   </div>
+  <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
   <button type="button" (click)="validateForm()" class="validate-btn">
     Valider ma tâche
   </button>
