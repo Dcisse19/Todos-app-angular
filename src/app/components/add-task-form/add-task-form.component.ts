@@ -71,8 +71,8 @@ export class AddTaskFormComponent {
   }
   validateForm() {
     if (this.taskForm.status === 'INVALID'){
-      this.errorMessage = "Tous les champs sont requis"
-      this.router.navigate(['ajout-tache']);
+      this.errorMessage = "Tous les champs sont requis";
+      console.log('Formulaire invalide');
     } else {
       if(this.todoItem){
         this.getFormValues();
